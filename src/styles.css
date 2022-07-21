@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("./assets/background.jpg") repeat;
+  background-size: 40%;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+.container {
+  width: 90%;
+  height: 75%;
+  margin: 10px auto;
+  border-radius: 15px;
+  background: #fff;
+  padding: 15px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFAEC9;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.nav-logo {
+  margin: 15px 0;
+  height: 10vh;
+}

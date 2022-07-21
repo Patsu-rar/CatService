@@ -1,0 +1,45 @@
+<div class="container">
+  <mat-grid-list cols="3" class="cats-grid" [gutterSize]="'10px'" rowHeight="200px">
+    <mat-grid-tile *ngFor="let cat of activeCats">
+      <div class="cat-tile">
+        <img src="{{cat.image.url}}" alt="cat" *ngIf="cat.image" class="cat-image">
+        <img src="../../../../assets/unknown.png" alt="cat" *ngIf="!cat.image" class="cat-image">
+        <p>{{cat.name}}</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="filters">
+    <form>
+      <div class="filter-count">
+        <p>Limit of displayed cats:</p>
+        <mat-slider
+          (change)="changeQuantity($event)"
+          value="10"
+          color="primary"
+          aria-label="units"
+          class="limit-slider"
+          max="{{allCats.length}}"
+          min="0"
+          step="1"
+          thumbLabel
+          tickInterval="1000"
+        ></mat-slider>
+      </div>
+      <div class="filter_breed">
+        <p>Select the wanted breed:</p>
+        <form [formGroup]="getBreedForm" class="breed_list">
+          <mat-checkbox *ngFor="let cat of allCats"
+                        color="primary"
+                        #checkbox="matCheckbox"
+                        [checked]="true"
+                        [value]="cat.name"
+                        formArrayName="selectedBreeds"
+                        (change)="selectBreed($event)">
+            {{cat.name}}
+          </mat-checkbox>
+        </form>
+      </div>
+    </form>
+  </div>
+</div>
+
